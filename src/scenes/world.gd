@@ -29,6 +29,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	
 	if not event is InputEventMouseButton:
+		if event.is_action_pressed("exit"):
+			get_tree().quit()
 		return
 
 	if activated:

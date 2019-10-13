@@ -35,14 +35,41 @@ func _generate_colours() -> void:
 	}
 	
 	game_colours[1] = {
-		0 : Color("#7dbff2"), # Background
-		1 : Color("#8bc7d5"), # Walls
+		0 : Color("#9d6f50"), # Background
+		1 : Color("#df9e86"), # Walls
 		2 : Color("#afc08a"), # ??
 		
 		4 : Color("#315364"), # Player Colour
 		
 		6 : Color("#33142a"), # Enemy Colour
 	}
+
+
+func calculate_score() -> int:
+	var result = 0
+	
+	result = get_total_clicks() * get_total_slow_down()
+	print(result)
+	
+	return result
+
+
+func get_total_clicks() -> int:
+	var result = 0
+	for i in level_details.size():
+		result += level_details[i + 1].score
+	
+	if result == 0:
+		result = 1
+	
+	return result
+
+
+func get_total_slow_down() -> int:
+	var result = 0
+	for i in level_details.size():
+		result += level_details[i + 1].dead_eye_value * 10
+	return result
 
 
 func _ready() -> void:
