@@ -52,3 +52,5 @@ scale = Vector2( 1.96, 0.5 )
 [node name="SceneExit" parent="." index="5"]
 position = Vector2( 435, 255 )
 scene_to_load = "res://src/scenes/World-3.tscn"
+
+[editable path="Player"]

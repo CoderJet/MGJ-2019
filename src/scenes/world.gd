@@ -12,6 +12,9 @@ export (int) var level_no = 1
 var activated : bool = false
 var player_can_move : bool = false
 
+func _ready():
+	if not $"/root/MusicPlayer".get_child(0).playing:
+		$"/root/MusicPlayer".get_child(0).play()
 
 func _process(delta: float) -> void:
 	if activated:
