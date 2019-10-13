@@ -119,22 +119,22 @@ func _ready() -> void:
 	level_details[9].dead_eye_value = level_details[9].max_dead_eye
 	level_details[9].level_best = 100
 	level_details[9].level_no = 8
-	level_details[9].level_colours = game_colours[0]
+	level_details[9].level_colours = game_colours[1]
 
 	level_details[10].max_dead_eye = 0.5
 	level_details[10].dead_eye_value = level_details[10].max_dead_eye
 	level_details[10].level_best = 100
 	level_details[10].level_no = 8
-	level_details[10].level_colours = game_colours[0]
+	level_details[10].level_colours = game_colours[1]
 
 	level_details[11].max_dead_eye = 0.5
 	level_details[11].dead_eye_value = level_details[11].max_dead_eye
 	level_details[11].level_best = 100
 	level_details[11].level_no = 8
-	level_details[11].level_colours = game_colours[0]
+	level_details[11].level_colours = game_colours[1]
 
 	level_details[12].max_dead_eye = 2.0
 	level_details[12].dead_eye_value = level_details[12].max_dead_eye
 	level_details[12].level_best = 100
 	level_details[12].level_no = 8
-	level_details[12].level_colours = game_colours[0]
+	level_details[12].level_colours = game_colours[1]
