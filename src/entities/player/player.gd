@@ -38,6 +38,7 @@ func _physics_process(delta: float) -> void:
 		scale = scale.linear_interpolate(Vector2(0.1, 0.1), 0.025)
 		
 		if position.distance_to(move_to) < 5:
+			yield(get_tree().create_timer(0.3), "timeout")
 			dissolve = false
 			get_tree().change_scene(scene_to_load)
 	else:		

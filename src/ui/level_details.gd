@@ -12,6 +12,7 @@ var current_level : int = 0
 
 func _ready() -> void:
 	current_level = get_parent().get_parent().level_no
+	level_best = globals.level_details[current_level].level_best
 	print("Current Level: " + String(current_level))
 	
 	level_val.text = String(current_level)

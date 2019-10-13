@@ -22,6 +22,9 @@ func _process(delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if not player.alive:
+		return
+	
 	if not event is InputEventMouseButton:
 		return
 

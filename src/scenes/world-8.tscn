@@ -13,6 +13,7 @@
 monitorable = false
 collision_mask = 0
 script = ExtResource( 1 )
+level_no = 8
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
