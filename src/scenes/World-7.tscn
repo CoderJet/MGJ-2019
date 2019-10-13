@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/scenes/world-template.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/obstacle/obstacle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/entities/Enemies/enemy.tscn" type="PackedScene" id=3]
+
+[node name="World" index="0" instance=ExtResource( 1 )]
+level_no = 7
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PoolVector2Array( -480, 410, -480, -210, 460, -210, 460, 410, 230, 410, 230, 80, -250, 80, -250, 410 )
+
+[node name="Obstacle" parent="Obstacles" index="0" instance=ExtResource( 2 )]
+position = Vector2( -10, -210 )
+scale = Vector2( 29.5, 0.5 )
+
+[node name="Obstacle5" parent="Obstacles" index="1" instance=ExtResource( 2 )]
+position = Vector2( -485, 102 )
+rotation = -1.57079
+scale = Vector2( 20, 0.5 )
+
+[node name="Obstacle8" parent="Obstacles" index="2" instance=ExtResource( 2 )]
+position = Vector2( 456.949, 102 )
+rotation = -1.57079
+scale = Vector2( 20, 0.5 )
+
+[node name="Obstacle2" parent="Obstacles" index="3" instance=ExtResource( 2 )]
+position = Vector2( -9.5, 79 )
+scale = Vector2( 15, 0.5 )
+
+[node name="Obstacle3" parent="Obstacles" index="4" instance=ExtResource( 2 )]
+position = Vector2( -373, 415 )
+scale = Vector2( 7.5, 0.5 )
+
+[node name="Obstacle6" parent="Obstacles" index="5" instance=ExtResource( 2 )]
+position = Vector2( -245, 247 )
+rotation = -1.57079
+scale = Vector2( 11, 0.5 )
+
+[node name="Obstacle9" parent="Obstacles" index="6" instance=ExtResource( 2 )]
+position = Vector2( 225, 247 )
+rotation = -1.57079
+scale = Vector2( 11, 0.5 )
+
+[node name="Obstacle4" parent="Obstacles" index="7" instance=ExtResource( 2 )]
+position = Vector2( 345, 415 )
+scale = Vector2( 7.5, 0.5 )
+
+[node name="Enemy" parent="Enemies" index="0" instance=ExtResource( 3 )]
+position = Vector2( -450, 100 )
+travel_points = [ Vector2( -450, 100 ), Vector2( -280, 100 ) ]
+
+[node name="Enemy5" parent="Enemies" index="1" instance=ExtResource( 3 )]
+position = Vector2( -210, -170 )
+travel_points = [ Vector2( -210, -170 ), Vector2( -210, 40 ) ]
+
+[node name="Enemy6" parent="Enemies" index="2" instance=ExtResource( 3 )]
+position = Vector2( -70, 40 )
+travel_points = [ Vector2( -70, 40 ), Vector2( -70, -170 ) ]
+
+[node name="Enemy7" parent="Enemies" index="3" instance=ExtResource( 3 )]
+position = Vector2( 70, -180 )
+travel_points = [ Vector2( 70, -180 ), Vector2( 70, 40 ) ]
+
+[node name="Enemy8" parent="Enemies" index="4" instance=ExtResource( 3 )]
+position = Vector2( 190, 40 )
+travel_points = [ Vector2( 190, 40 ), Vector2( 190, -180 ) ]
+
+[node name="Enemy4" parent="Enemies" index="5" instance=ExtResource( 3 )]
+position = Vector2( 260, 100 )
+travel_points = [ Vector2( 260, 100 ), Vector2( 420, 100 ) ]
+
+[node name="Enemy2" parent="Enemies" index="6" instance=ExtResource( 3 )]
+position = Vector2( -280, 210 )
+travel_points = [ Vector2( -280, 210 ), Vector2( -450, 210 ) ]
+
+[node name="Enemy3" parent="Enemies" index="7" instance=ExtResource( 3 )]
+position = Vector2( 420, 210 )
+travel_points = [ Vector2( 420, 210 ), Vector2( 260, 210 ) ]
+
+[node name="Player" parent="." index="3"]
+position = Vector2( -368.661, 326.489 )
+
+[node name="SceneExit" parent="." index="5"]
+position = Vector2( 349.615, 326.489 )
+scene_to_load = "res://src/scenes/world-8.tscn"
+
+[editable path="Player"]

@@ -35,12 +35,12 @@ func _ready() -> void:
 	level_details[5].level_no = 5
 	level_details[5].max_dead_eye = 0.5
 	level_details[5].dead_eye_value = level_details[5].max_dead_eye
-	level_details[5].level_best = 100
+	level_details[5].level_best = 2
 	
 	level_details[6].level_no = 6
 	level_details[6].max_dead_eye = 0.5
 	level_details[6].dead_eye_value = level_details[6].max_dead_eye
-	level_details[6].level_best = 100
+	level_details[6].level_best = 8
 	
 	level_details[7].level_no = 7
 	level_details[7].max_dead_eye = 0.5
