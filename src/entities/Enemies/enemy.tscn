@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/entities/Enemies/enemy.gd" type="Script" id=1]
-[ext_resource path="res://assets/shape.png" type="Texture" id=2]
+[ext_resource path="res://src/mechanic/trail.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/shape.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
@@ -12,9 +13,16 @@ collision_mask = 4
 script = ExtResource( 1 )
 travel_points = [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 
+[node name="Trail" parent="." instance=ExtResource( 2 )]
+width = 20.0
+default_color = Color( 0.419608, 0.486275, 0.556863, 0.588235 )
+joint_mode = 0
+trail_length = 25
+
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.788235, 0.309804, 0.309804, 1 )
-texture = ExtResource( 2 )
+modulate = Color( 0.231373, 0.180392, 0.239216, 1 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 1 )

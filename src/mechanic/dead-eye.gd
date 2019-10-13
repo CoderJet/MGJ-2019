@@ -1,15 +1,10 @@
 extends Node2D
 
 onready var player := get_parent().get_node("Player")
-onready var timer : Timer = get_parent().get_node("DeadEyeTimer")
 
 var target_point := PoolVector2Array()
 
 var is_running : bool = false
-
-
-func _ready() -> void:
-	timer.connect("timeout", self, "_temp")
 
 
 func _draw() -> void:	
@@ -28,14 +23,13 @@ func _draw() -> void:
 		
 			draw_line(new_pos_1, new_pos_2, Color.red, 2.0)
 
-func _temp() -> void:
+func _activate_dead_eye() -> void:
 	target_point.invert()
 	player.process_dead_eye(target_point)
 	
 	is_running = false
 	target_point = PoolVector2Array()
 	update()
-	print("Dead eye is over")
 
 
 func _on_World_on_point_selected(pos) -> void:
@@ -44,10 +38,8 @@ func _on_World_on_point_selected(pos) -> void:
 	
 	if not is_running:
 		is_running = true
-		timer.start()
 
 
 func _on_World_on_activate_actions() -> void:
 	if is_running:
-		timer.stop()
-		_temp()
+		_activate_dead_eye()

@@ -1,0 +1,148 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/scenes/world.gd" type="Script" id=1]
+[ext_resource path="res://src/obstacle/obstacle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/entities/Enemies/enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/entities/player/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/mechanic/dead-eye.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/scenes/scene_exit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/scenes/background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/ui/foreground.tscn" type="PackedScene" id=8]
+
+[node name="World" type="Area2D"]
+monitorable = false
+collision_mask = 0
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+z_index = 1
+polygon = PoolVector2Array( -150, 30, -150, -300, 30, -480, 225, -675, 360, -810, 735, -810, 735, -885, 825, -885, 825, -855, 825, -555, 390, -555, 150, -300, 150, 30 )
+
+[node name="Obstacles" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Obstacle" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( -1.36424e-011, 30 )
+scale = Vector2( 9.4, 0.5 )
+
+[node name="Obstacle2" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( -150, -135 )
+rotation = -1.57079
+scale = Vector2( 10.8, 0.5 )
+
+[node name="Obstacle3" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( 150, -135 )
+rotation = -1.57079
+scale = Vector2( 10.8, 0.5 )
+
+[node name="Obstacle4" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( -28.0097, -426.78 )
+rotation = -0.785397
+scale = Vector2( 11, 0.5 )
+
+[node name="Obstacle5" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( 271.79, -427.146 )
+rotation = -0.785397
+scale = Vector2( 11, 0.5 )
+
+[node name="Obstacle6" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( 223.93, -678.67 )
+rotation = -0.785397
+scale = Vector2( 11.3677, 0.5 )
+
+[node name="Obstacle7" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( 615.131, -549.258 )
+rotation = 0.0
+scale = Vector2( 14.04, 0.5 )
+
+[node name="Obstacle8" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( 542.261, -804.883 )
+rotation = 0.0
+scale = Vector2( 12.2, 0.5 )
+
+[node name="Obstacle9" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( 729.663, -840.368 )
+rotation = -1.57079
+scale = Vector2( 2.72, 0.5 )
+
+[node name="Obstacle10" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( 780.575, -880.227 )
+rotation = 0.0
+scale = Vector2( 3.68, 0.5 )
+
+[node name="Obstacle11" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( 831.721, -714.821 )
+rotation = 1.57079
+scale = Vector2( 10.84, 0.5 )
+
+[node name="Obstacle12" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( -90, -240 )
+rotation = 0.0
+scale = Vector2( 3.76, 0.5 )
+
+[node name="Obstacle13" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( 90, -240 )
+rotation = 0.0
+scale = Vector2( 3.76, 0.5 )
+
+[node name="Obstacle14" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( 90, -300 )
+rotation = 0.0
+scale = Vector2( 3.76, 0.5 )
+
+[node name="Obstacle15" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( -90, -300 )
+rotation = 0.0
+scale = Vector2( 3.76, 0.5 )
+
+[node name="Obstacle16" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( 60, -450 )
+rotation = 0.785398
+scale = Vector2( 2.82662, 0.5 )
+
+[node name="Obstacle17" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( 245.096, -486.661 )
+rotation = 0.785398
+scale = Vector2( 3.47716, 0.5 )
+
+[node name="Obstacle18" parent="Obstacles" instance=ExtResource( 2 )]
+position = Vector2( 285, -660 )
+rotation = 0.785398
+scale = Vector2( 3.84485, 0.5 )
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -90, -270 )
+speed = 0.03
+travel_points = [ Vector2( -90, -270 ), Vector2( 120, -270 ) ]
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 435, -765 )
+speed = 0.05
+travel_points = [ Vector2( 435, -765 ), Vector2( 510, -675 ), Vector2( 435, -585 ), Vector2( 360, -675 ) ]
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 795, -675 )
+speed = 0.05
+travel_points = [ Vector2( 690, -585 ), Vector2( 600, -675 ), Vector2( 690, -765 ), Vector2( 795, -675 ) ]
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -30 )
+start_position = Vector2( 0, -45 )
+
+[node name="DeadEye" parent="." instance=ExtResource( 5 )]
+
+[node name="SceneExit" parent="." instance=ExtResource( 6 )]
+position = Vector2( 780, -840 )
+scene_to_load = "res://src/scenes/world-2.tscn"
+
+[node name="Background" parent="." instance=ExtResource( 7 )]
+
+[node name="Foreground" parent="." instance=ExtResource( 8 )]
+[connection signal="mouse_entered" from="." to="." method="_on_World_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_World_mouse_exited"]
+[connection signal="on_activate_actions" from="." to="DeadEye" method="_on_World_on_activate_actions"]
+[connection signal="on_point_selected" from="." to="DeadEye" method="_on_World_on_point_selected"]
+[connection signal="dissolve_player" from="SceneExit" to="Player" method="_on_SceneExit_dissolve_player"]

@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/scenes/world.gd" type="Script" id=1]
+[ext_resource path="res://src/entities/player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/mechanic/dead-eye.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/scenes/scene_exit.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scenes/background.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/ui/foreground.tscn" type="PackedScene" id=6]
+
+[node name="World" type="Area2D"]
+script = ExtResource( 1 )
+level_no = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 0, 0 )
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="DeadEye" parent="." instance=ExtResource( 3 )]
+
+[node name="SceneExit" parent="." instance=ExtResource( 4 )]
+
+[node name="Background" parent="." instance=ExtResource( 5 )]
+
+[node name="Foreground" parent="." instance=ExtResource( 6 )]
+[connection signal="mouse_entered" from="." to="." method="_on_World_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_World_mouse_exited"]
+[connection signal="on_activate_actions" from="." to="DeadEye" method="_on_World_on_activate_actions"]
+[connection signal="on_point_selected" from="." to="DeadEye" method="_on_World_on_point_selected"]
+[connection signal="dissolve_player" from="SceneExit" to="Player" method="_on_SceneExit_dissolve_player"]

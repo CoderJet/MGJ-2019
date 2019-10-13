@@ -1,0 +1,124 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/ui/level_details.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/genghiskhan_42.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/progress-frame.png" type="Texture" id=3]
+[ext_resource path="res://assets/progress-bar.png" type="Texture" id=4]
+
+[node name="Foreground" type="CanvasLayer"]
+
+[node name="LevelDetails" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -229.0
+margin_top = -285.0
+margin_right = -24.0
+margin_bottom = 300.0
+mouse_filter = 2
+size_flags_vertical = 2
+script = ExtResource( 1 )
+
+[node name="Level" type="HBoxContainer" parent="LevelDetails"]
+editor/display_folded = true
+margin_right = 225.0
+margin_bottom = 39.0
+mouse_filter = 2
+alignment = 1
+
+[node name="Display" type="Label" parent="LevelDetails/Level"]
+margin_left = 57.0
+margin_right = 153.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 2 )
+text = "Level :"
+
+[node name="Value" type="Label" parent="LevelDetails/Level"]
+margin_left = 157.0
+margin_right = 168.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 2 )
+text = "1"
+align = 1
+
+[node name="ScoreToBeat" type="HBoxContainer" parent="LevelDetails"]
+editor/display_folded = true
+margin_top = 43.0
+margin_right = 225.0
+margin_bottom = 82.0
+mouse_filter = 2
+alignment = 1
+
+[node name="Display" type="Label" parent="LevelDetails/ScoreToBeat"]
+margin_right = 170.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 2 )
+text = "Level Best :"
+
+[node name="Value" type="Label" parent="LevelDetails/ScoreToBeat"]
+margin_left = 174.0
+margin_right = 225.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 2 )
+text = "100"
+align = 1
+
+[node name="Score" type="HBoxContainer" parent="LevelDetails"]
+margin_top = 86.0
+margin_right = 225.0
+margin_bottom = 125.0
+mouse_filter = 2
+alignment = 1
+
+[node name="Display" type="Label" parent="LevelDetails/Score"]
+margin_left = 32.0
+margin_right = 138.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 2 )
+text = "Score: "
+
+[node name="Value" type="Label" parent="LevelDetails/Score"]
+margin_left = 142.0
+margin_right = 193.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 2 )
+text = "100"
+align = 1
+
+[node name="DeadEye" type="VBoxContainer" parent="LevelDetails"]
+editor/display_folded = true
+margin_top = 129.0
+margin_right = 225.0
+margin_bottom = 204.0
+mouse_filter = 2
+alignment = 1
+
+[node name="Display" type="Label" parent="LevelDetails/DeadEye"]
+margin_right = 225.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 2 )
+text = "Slow Down"
+align = 1
+valign = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="LevelDetails/DeadEye"]
+margin_top = 43.0
+margin_right = 225.0
+margin_bottom = 75.0
+mouse_filter = 2
+
+[node name="Value" type="TextureProgress" parent="LevelDetails/DeadEye/CenterContainer"]
+margin_left = 48.0
+margin_right = 176.0
+margin_bottom = 32.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 0.4
+step = 0.001
+value = 0.4
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
+fill_mode = 6
+tint_progress = Color( 0.411765, 0.647059, 0.576471, 1 )

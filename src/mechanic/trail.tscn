@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/entities/player/trail.gd" type="Script" id=1]
+
+[node name="Trail" type="Line2D"]
+width = 22.0
+default_color = Color( 0.866667, 0.529412, 0.494118, 0.596078 )
+texture_mode = 587202560
+joint_mode = 2
+begin_cap_mode = 2
+script = ExtResource( 1 )
+trail_length = 30
