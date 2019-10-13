@@ -25,6 +25,10 @@ var scene_to_load := String()
 var move_to : Vector2 = Vector2.ZERO
 
 
+func _ready() -> void:
+	$Sprite.modulate = globals.level_details[get_parent().level_no].level_colours[4]
+
+
 func _physics_process(delta: float) -> void:
 	if not alive:
 		return

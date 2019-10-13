@@ -28,7 +28,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if activated:
 		if (event.button_index == BUTTON_LEFT and event.pressed):
 			if player_can_move:
-				print("Click!")
 				emit_signal("on_point_selected", get_global_mouse_position())
 
 	if event.button_index == BUTTON_RIGHT:

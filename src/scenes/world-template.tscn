@@ -19,6 +19,7 @@ polygon = PoolVector2Array( 0, 0 )
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
 
 [node name="DeadEye" parent="." instance=ExtResource( 3 )]
 

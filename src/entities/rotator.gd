@@ -5,6 +5,9 @@ export var rotate_amount : int = 1
 
 var path_itr : int = 1
 
+func _ready() -> void:
+	$Sprite.modulate = globals.level_details[get_parent().get_parent().level_no].level_colours[1]
+
 
 func _physics_process(delta: float) -> void:
 	rotation += rotate_amount * delta * Engine.time_scale
