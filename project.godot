@@ -27,16 +27,12 @@ _global_script_class_icons={
 [application]
 
 config/name="MGJ-2019"
-run/main_scene="res://src/scenes/world-8.tscn"
+run/main_scene="res://src/scenes/world.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 globals="*res://src/globals/globals.gd"
-
-[display]
-
-window/size/always_on_top=true
 
 [input]
 

@@ -4,6 +4,7 @@
 [ext_resource path="res://src/obstacle/obstacle.tscn" type="PackedScene" id=2]
 
 [node name="World" index="0" instance=ExtResource( 1 )]
+level_no = 1
 
 [node name="CollisionPolygon2D" parent="." index="0"]
 polygon = PoolVector2Array( -30, -105, 375, -105, 375, 105, -30, 105 )
@@ -31,3 +32,4 @@ position = Vector2( 30, 0 )
 
 [node name="SceneExit" parent="." index="5"]
 position = Vector2( 330, 0 )
+scene_to_load = "res://src/scenes/world-2.tscn"
