@@ -26,6 +26,8 @@ func _process(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not player.alive:
+		if activated:
+			trigger_dead_eye(false)
 		return
 	
 	if not event is InputEventMouseButton:
