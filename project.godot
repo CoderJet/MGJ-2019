@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="MGJ-2019"
-run/main_scene="res://src/scenes/world-1.tscn"
+run/main_scene="res://src/scenes/world.tscn"
 config/icon="res://icon.png"
 
 [autoload]
