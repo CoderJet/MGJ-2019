@@ -32,3 +32,5 @@ polygon = PoolVector2Array( 0, 0 )
 [connection signal="on_activate_actions" from="." to="DeadEye" method="_on_World_on_activate_actions"]
 [connection signal="on_point_selected" from="." to="DeadEye" method="_on_World_on_point_selected"]
 [connection signal="dissolve_player" from="SceneExit" to="Player" method="_on_SceneExit_dissolve_player"]
+
+[editable path="Player"]
