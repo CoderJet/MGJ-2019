@@ -17,6 +17,7 @@ var perform_zoom : bool = false
 var zooming_out : bool = false
 var dissolve : bool = false
 var next_point := Vector2.ZERO
+var alive : bool = true
 
 var point_path := PoolVector2Array()
 
@@ -25,6 +26,9 @@ var move_to : Vector2 = Vector2.ZERO
 
 
 func _physics_process(delta: float) -> void:
+	if not alive:
+		return
+
 	if dissolve:
 		position = position.linear_interpolate(move_to, delta)
 		scale = scale.linear_interpolate(Vector2(0.1, 0.1), 0.025)
@@ -77,8 +81,12 @@ func zoom(val : bool) -> void:
 
 func _on_Area2D_body_entered(body: PhysicsBody2D) -> void:
 	# 'Died'
+	$Shaker.start()
+	alive = false
+	visible = false
 	globals.level_details[get_parent().level_no].reset_dead_eye()
 	globals.level_details[get_parent().level_no].score = 0
+	yield(get_tree().create_timer(1), "timeout")
 	get_tree().reload_current_scene()
 
 func _on_SceneExit_dissolve_player(scene, pos) -> void:
