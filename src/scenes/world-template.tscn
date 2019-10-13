@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/scenes/world.gd" type="Script" id=1]
 [ext_resource path="res://src/entities/player/player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/scenes/scene_exit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/scenes/background.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/ui/foreground.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/scenes/MusicPlayer.tscn" type="PackedScene" id=7]
 
 [node name="World" type="Area2D"]
 script = ExtResource( 1 )
@@ -28,6 +29,8 @@ editor/display_folded = true
 [node name="Background" parent="." instance=ExtResource( 5 )]
 
 [node name="Foreground" parent="." instance=ExtResource( 6 )]
+
+[node name="Music" parent="." instance=ExtResource( 7 )]
 [connection signal="mouse_entered" from="." to="." method="_on_World_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_World_mouse_exited"]
 [connection signal="on_activate_actions" from="." to="DeadEye" method="_on_World_on_activate_actions"]

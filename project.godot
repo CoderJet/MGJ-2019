@@ -33,6 +33,7 @@ config/icon="res://icon.png"
 [autoload]
 
 globals="*res://src/globals/globals.gd"
+MusicPlayer="*res://src/scenes/MusicPlayer.tscn"
 
 [input]
 
