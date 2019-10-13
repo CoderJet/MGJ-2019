@@ -18,13 +18,11 @@ stretch_mode = 1
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 margin_left = -238.0
-margin_top = -152.5
+margin_top = 100.0
 margin_right = 238.0
-margin_bottom = 152.5
+margin_bottom = 213.0
 custom_fonts/font = ExtResource( 3 )
 text = "Welcome to 
 'Dimensional Slow Down'!
@@ -32,3 +30,31 @@ text = "Welcome to
 Press \"Space\" to begin
 and press \"Esc\" to exit."
 align = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -380.0
+margin_top = -261.0
+margin_right = 380.0
+custom_fonts/mono_font = ExtResource( 3 )
+custom_fonts/bold_italics_font = ExtResource( 3 )
+custom_fonts/italics_font = ExtResource( 3 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]
+[u]Game Design, Programming and Art[/u]
+[color=aqua][url=https://twitter.com/CoderJet]@CoderJet[/url][/color]
+
+[u]Music and Level Design[/u]
+[color=aqua][url=https://twitter.com/Nairu221]@Nairu221[/url][/color]"
+text = "
+Game Design, Programming and Art
+@CoderJet
+
+Music and Level Design
+@Nairu221"
+[connection signal="meta_clicked" from="RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]

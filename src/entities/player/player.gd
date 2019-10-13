@@ -6,8 +6,8 @@ const MAX_ZOOM := Vector2(1.25, 1.25)
 const MIN_ZOOM := Vector2(0.75, 0.75)
 
 const MIN_DROP = 0.1
-const MAX_DROP = 1.0
-const DROP_STEP = 0.1
+const MAX_DROP = 3.0
+const DROP_STEP = 0.3
 const DROP_DELAY = 0.25
 
 var velocity = 0.0
