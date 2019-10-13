@@ -9,13 +9,10 @@
 
 [node name="LevelDetails" type="VBoxContainer" parent="."]
 anchor_left = 1.0
-anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -229.0
-margin_top = -285.0
-margin_right = -24.0
-margin_bottom = 300.0
+margin_left = -225.0
+margin_top = 14.0
+margin_bottom = 585.0
 mouse_filter = 2
 size_flags_vertical = 2
 script = ExtResource( 1 )

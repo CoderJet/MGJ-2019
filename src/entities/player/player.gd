@@ -25,6 +25,10 @@ var scene_to_load := String()
 var move_to : Vector2 = Vector2.ZERO
 
 
+func _ready() -> void:
+	$Sprite.modulate = globals.level_details[get_parent().level_no].level_colours[4]
+
+
 func _physics_process(delta: float) -> void:
 	if not alive:
 		return
@@ -34,6 +38,7 @@ func _physics_process(delta: float) -> void:
 		scale = scale.linear_interpolate(Vector2(0.1, 0.1), 0.025)
 		
 		if position.distance_to(move_to) < 5:
+			yield(get_tree().create_timer(0.3), "timeout")
 			dissolve = false
 			get_tree().change_scene(scene_to_load)
 	else:		
