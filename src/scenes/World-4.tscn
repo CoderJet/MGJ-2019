@@ -60,3 +60,5 @@ position = Vector2( 3.17346, 337.961 )
 [node name="SceneExit" parent="." index="5"]
 position = Vector2( -328.441, 0 )
 scene_to_load = "res://src/scenes/World-5.tscn"
+
+[editable path="Player"]

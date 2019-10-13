@@ -16,7 +16,6 @@ script = ExtResource( 1 )
 level_no = 8
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
 z_index = 1
 polygon = PoolVector2Array( -150, 30, -150, -300, 30, -480, 225, -675, 360, -810, 735, -810, 735, -885, 825, -885, 825, -855, 825, -555, 390, -555, 150, -300, 150, 30 )
 
@@ -137,7 +136,7 @@ start_position = Vector2( 0, -45 )
 
 [node name="SceneExit" parent="." instance=ExtResource( 6 )]
 position = Vector2( 780, -840 )
-scene_to_load = "res://src/scenes/world-2.tscn"
+scene_to_load = "res://src/scenes/World-9.tscn"
 
 [node name="Background" parent="." instance=ExtResource( 7 )]
 
